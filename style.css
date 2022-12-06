@@ -8,8 +8,8 @@
   font-size: 62.5%;
   --hue-color: 34;
   --body-bg-color: rgba(34, 33, 44, 1);
-  --text-color: rgba(131, 126, 159, 1);
-  --bg-cards: rgba(48, 47, 61, 1);
+  --text-color: rgb(162, 155, 196);
+  --bg-cards: rgb(47, 45, 65);
   --bg-techs: rgba(203, 146, 177, 1);
 }
 
@@ -21,30 +21,28 @@ body {
   height: 100vh;
 }
 
-img {
+.profile img {
   width: 12.8rem;
   height: 12.8rem;
   margin: 3.2rem 11rem 3rem;
-  border: 2px solid green;
+  border: 2px solid #00ff00;
+  border-radius: 99999px;
 }
 
-.page {
-  display: grid;
-  grid-template-areas:
-    'A  B '
-    'A B';
-}
-
-div .profile {
-  grid-area: A;
-  width: 34.8rem;
-  height: 29.2rem;
+.card {
+  border-radius: 2rem;
   background-color: var(--bg-cards);
-  place-content: center;
-  margin: 4rem 6rem 3rem 4rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-div .profile h1 {
+/* PAREI AQUI */
+.card:hover {
+  transform: scale(1.1);
+  transition: 2s;
+}
+
+h1 {
   font-weight: 700;
   font-size: 2.3rem;
   line-height: 2.9rem;
@@ -52,10 +50,75 @@ div .profile h1 {
   color: var(--text-color);
 }
 
-div .profile p {
-   
+p {
+  line-height: 1.6rem;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+div .profile {
+  width: 34.8rem;
+  height: 29.2rem;
+  place-content: center;
+  margin: 4rem 6rem 3rem 4rem;
+}
+
+div .profile h1 {
+  font-size: 2.3rem;
+}
+
+div .links {
+  width: 34.8rem;
+  height: 34.8rem;
+  margin: 0 6rem 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+div .links > div {
+  display: inline-flex;
+  gap: 2rem;
+  margin: 2rem 0 0 4rem;
+  align-items: center;
+}
+
+div .techs {
+  width: 34.8rem;
+  height: 20.8rem;
+  margin: 0 6rem 3rem 4rem;
+}
+
+div .education {
+  width: 35rem;
+  height: 35rem;
+  margin: 0 6rem 6rem 4rem;
+}
+
+.page {
+  display: grid;
+  grid-template-areas:
+    'A T T'
+    'B T T'
+    'C T T'
+    'D T T';
+}
+
+/*Grid-Areas*/
+
+div .profile {
+  grid-area: A;
 }
 
 div .links {
   grid-area: B;
+}
+
+div .techs {
+  grid-area: C;
+}
+
+div .education {
+  grid-area: D;
 }
