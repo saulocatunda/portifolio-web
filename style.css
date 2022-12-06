@@ -17,4 +17,45 @@ body {
   font-size: 1.6rem;
   font-family: 'Merriweather Sans', sans-serif;
   background-color: var(--body-bg-color);
+  width: 100vh;
+  height: 100vh;
+}
+
+img {
+  width: 12.8rem;
+  height: 12.8rem;
+  margin: 3.2rem 11rem 3rem;
+  border: 2px solid green;
+}
+
+.page {
+  display: grid;
+  grid-template-areas:
+    'A  B '
+    'A B';
+}
+
+div .profile {
+  grid-area: A;
+  width: 34.8rem;
+  height: 29.2rem;
+  background-color: var(--bg-cards);
+  place-content: center;
+  margin: 4rem 6rem 3rem 4rem;
+}
+
+div .profile h1 {
+  font-weight: 700;
+  font-size: 2.3rem;
+  line-height: 2.9rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+div .profile p {
+   
+}
+
+div .links {
+  grid-area: B;
 }
