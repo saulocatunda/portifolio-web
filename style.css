@@ -19,6 +19,7 @@ body {
   background-color: var(--body-bg-color);
   width: 100vh;
   height: 100vh;
+  
 }
 
 .profile img {
@@ -30,10 +31,13 @@ body {
 }
 
 .card {
+  width: 35rem;
   border-radius: 2rem;
   background-color: var(--bg-cards);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  padding: 3rem 2rem;
+  margin: 3rem 3rem 0;
 }
 
 /* PAREI AQUI */
@@ -58,10 +62,7 @@ p {
 }
 
 div .profile {
-  width: 34.8rem;
-  height: 29.2rem;
   place-content: center;
-  margin: 4rem 6rem 3rem 4rem;
 }
 
 div .profile h1 {
@@ -69,34 +70,20 @@ div .profile h1 {
 }
 
 div .links {
-  width: 34.8rem;
-  height: 34.8rem;
-  margin: 0 6rem 3rem 4rem;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  
 }
 
 div .links > div {
   display: inline-flex;
   gap: 2rem;
-  margin: 2rem 0 0 4rem;
+  margin: 0 0 2rem 2rem;
   align-items: center;
 }
 
-div .techs {
-  width: 34.8rem;
-  height: 20.8rem;
-  margin: 0 6rem 3rem 4rem;
-}
-
-div .education {
-  width: 35rem;
-  height: 35rem;
-  margin: 0 6rem 6rem 4rem;
-}
-
 .page {
+  padding-bottom: 2rem;
   display: grid;
   grid-template-areas:
     'A T T'
