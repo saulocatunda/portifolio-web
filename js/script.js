@@ -1,31 +1,20 @@
-import {
-  repoGit,
-  languageProject,
-  branchProject,
-  starsProject,
-  nameProject,
-  descriptionProject,
-  projectsCard,
-  keyApiToken,
-  keyApi
-} from './elements.js'
+import { api_key_token } from './api_key.js'
+;('./api_key')
+import { projectsCard, keyApi } from './elements.js'
 
 function getApiGitHub() {
   fetch(keyApi, {
     headers: {
-      Authorization: keyApiToken
+      Authorization: api_key_token
     }
   })
     .then(async res => {
       if (!res.ok) {
         throw new Error(res.status)
       }
-
       var data = await res.json()
-
       data.map(item => {
         let project = document.createElement('div')
-
         project.innerHTML = `
         <div class="project card">
           <div class="headerProject">
@@ -43,10 +32,10 @@ function getApiGitHub() {
               <p class="starCounts">${item.stargazers_count}</p>
               <img src="assets/git-branch.svg" alt="branch icon" />
               <p class="branchCounts">${item.forks_count}</p>
-              <a href="${item.html_url}" target="_blank"><img src="assets/globe.svg" alt="Globe Icon with a link"></a>
+              <a href="${item.html_url}" rel="noopener" target="_blank"><img src="assets/globe.svg" alt="Globe Icon with a link"></a>
             </div>
             <div class="footerTech">
-              <p class="language"><span class="circle">-</span>${item.language}</p>
+              <p class="language"><span class="circle"></span> ${item.language}</p>
             </div>
           </div>
         </div>

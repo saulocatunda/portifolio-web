@@ -11,6 +11,7 @@
   --text-color: rgb(162, 155, 196);
   --bg-cards: rgb(47, 45, 65);
   --bg-techs: rgba(203, 146, 177, 1);
+  --prof-border: rgb(125, 189, 29);
 }
 
 body {
@@ -21,13 +22,19 @@ body {
   height: 100vh;
 }
 
+.hide {
+  opacity: 0;
+  display: none;
+}
+
 .profile img {
   width: clamp(8.8rem, 7rem + 5vw, 12.8rem);
   height: clamp(8.8rem, 7rem + 5vw, 12.8rem);
   margin: auto;
   display: block;
-  border: 2px solid #00ff00;
+  border: 2px solid var(--prof-border);
   border-radius: 99999px;
+  filter: contrast(80%);
 }
 
 .card {
@@ -35,9 +42,13 @@ body {
   border-radius: 2rem;
   background-color: var(--bg-cards);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   padding: 3rem 0;
   margin: 3rem 3rem 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 h1 {
@@ -48,7 +59,8 @@ h1 {
   color: var(--text-color);
 }
 
-p {
+p,
+a {
   line-height: 1.6rem;
   font-size: 1.3rem;
   text-align: center;
@@ -74,6 +86,11 @@ div .techs .technologies {
   gap: 0.5rem;
   margin: 0 0 0 2rem;
 }
+
+div .techs p {
+  margin-top: 1rem;
+}
+
 div .techs section h1 {
   justify-content: center;
   align-items: center;
@@ -134,7 +151,6 @@ div .links > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
 
 .colum-2 .project .headerProject {
@@ -150,15 +166,29 @@ div .links > div {
 .colum-2 .project .footerCounts {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.1rem;
 }
-.colum-2 .project .footerTech{
+
+.colum-2 .project .footerCounts img {
+  margin-left: 1rem;
+}
+
+.colum-2 .project .footerTech {
   display: flex;
   align-items: center;
 }
 
 .colum-2 .headerProject h1 {
   font-size: 1.6rem;
+}
+
+.colum-2 .circle {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 9999px;
+  background-color: var(--prof-border);
+  border: 1px solid var(--body-bg-color);
 }
 
 .page {
