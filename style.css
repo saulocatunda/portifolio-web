@@ -19,31 +19,25 @@ body {
   background-color: var(--body-bg-color);
   width: 100vh;
   height: 100vh;
-  
 }
 
 .profile img {
-  width: 12.8rem;
-  height: 12.8rem;
-  margin: 3.2rem 11rem 3rem;
+  width: clamp(8.8rem, 7rem + 5vw, 12.8rem);
+  height: clamp(8.8rem, 7rem + 5vw, 12.8rem);
+  margin: auto;
+  display: block;
   border: 2px solid #00ff00;
   border-radius: 99999px;
 }
 
 .card {
-  width: 35rem;
+  width: clamp(25rem, 25rem + 5vw, 60rem);
   border-radius: 2rem;
   background-color: var(--bg-cards);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  padding: 3rem 2rem;
+  padding: 3rem 0;
   margin: 3rem 3rem 0;
-}
-
-/* PAREI AQUI */
-.card:hover {
-  transform: scale(1.1);
-  transition: 2s;
 }
 
 h1 {
@@ -72,7 +66,33 @@ div .profile h1 {
 div .links {
   display: flex;
   flex-direction: column;
-  
+}
+
+div .techs .technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0 2rem;
+}
+div .techs section h1 {
+  justify-content: center;
+  align-items: center;
+}
+div .techs .technologies p {
+  color: black;
+  background-color: #cb92b1;
+  border-radius: 3rem;
+  padding: 0.2rem 1rem;
+}
+
+ul li {
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
+ul li p {
+  text-align: start;
+  margin-left: 4rem;
 }
 
 div .links > div {
@@ -82,11 +102,70 @@ div .links > div {
   align-items: center;
 }
 
+.colum-2 .card {
+  width: clamp(35rem, 25rem + 40vw, 85rem);
+}
+
+.colum-2 .myprojects {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.colum-2 .myprojects section h1 {
+  font-size: 2rem;
+}
+
+.colum-2 .projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.colum-2 .project.card {
+  width: clamp(25rem, 25rem + 5vw, 30rem);
+  height: clamp(15rem, 15rem + 5vh, 20rem);
+  padding: 2rem;
+}
+
+.colum-2 .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.colum-2 .project .headerProject {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.colum-2 .project .footerProject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.colum-2 .project .footerCounts {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.colum-2 .project .footerTech{
+  display: flex;
+  align-items: center;
+}
+
+.colum-2 .headerProject h1 {
+  font-size: 1.6rem;
+}
+
 .page {
   padding-bottom: 2rem;
   display: grid;
   grid-template-areas:
-    'A T T'
+    'A E E'
     'B T T'
     'C T T'
     'D T T';
@@ -108,4 +187,8 @@ div .techs {
 
 div .education {
   grid-area: D;
+}
+
+div .myprojects {
+  grid-area: E;
 }
