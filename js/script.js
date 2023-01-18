@@ -1,17 +1,11 @@
 import { projectsCard, keyApi } from './elements.js'
 
-
 function getApiGitHub() {
-  fetch(keyApi, {
-    headers: {
-      Authorization: "Bearer " + process.env.API_TOKEN
-    }
-  })
+  fetch(keyApi)
     .then(async res => {
       if (!res.ok) {
         throw new Error(res.status)
       }
-      console.log(tokenAPI);
       var data = await res.json()
       data.map(item => {
         let project = document.createElement('div')
