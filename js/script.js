@@ -1,13 +1,7 @@
-import { api_key_token } from './api_key.js'
-;('./api_key')
 import { projectsCard, keyApi } from './elements.js'
 
 function getApiGitHub() {
-  fetch(keyApi, {
-    headers: {
-      Authorization: api_key_token
-    }
-  })
+  fetch(keyApi)
     .then(async res => {
       if (!res.ok) {
         throw new Error(res.status)
