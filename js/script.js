@@ -1,11 +1,7 @@
 import { projectsCard, keyApi } from './elements.js'
 
 function getApiGitHub() {
-  fetch(keyApi, {
-    headers: {
-      Authorization: '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'
-    }
-  })
+  fetch(keyApi)
     .then(async res => {
       if (!res.ok) {
         throw new Error(res.status)
