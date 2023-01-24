@@ -18,8 +18,12 @@ body {
   font-size: 1.6rem;
   font-family: 'Merriweather Sans', sans-serif;
   background-color: var(--body-bg-color);
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
+}
+
+.page {
+  margin: 0 auto;
 }
 
 .hide {
@@ -119,8 +123,17 @@ div .links > div {
   align-items: center;
 }
 
-.colum-2 .card {
-  width: clamp(35rem, 25rem + 40vw, 85rem);
+.colum-2 {
+  width: clamp(30vw, 40vw +  10vw, 60vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.colum-2 .myprojects.card {
+  width: clamp(30vw, 30vw +  30vw, 60vw);
+  margin-left: 5rem;
 }
 
 .colum-2 .myprojects {
@@ -138,13 +151,14 @@ div .links > div {
 .colum-2 .projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .colum-2 .project.card {
-  width: clamp(25rem, 25rem + 5vw, 30rem);
-  height: clamp(15rem, 15rem + 5vh, 20rem);
-  padding: 2rem;
+  width: clamp(25rem, 15rem + 5vw, 30rem);
+  height: clamp(15rem, 8rem + 5vh, 20rem);
+  padding: 1.5rem;
+  margin: 10% 10%;
 }
 
 .colum-2 .project {
@@ -221,4 +235,8 @@ div .education {
 
 div .myprojects {
   grid-area: E;
+}
+
+div .project.card {
+  grid-area: T;
 }
